@@ -24,8 +24,6 @@ struct BlockList {
     _ignored: Value,
 }
 
-// {'owner': {'name': 'Instabug', 'displayName': 'Instabug'}, 'app': {'score': 660, 'prevalence': 0.027}, 'default': 'block', 'CDN': False}
-
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let block_list = reqwest::blocking::get(
         "https://staticcdn.duckduckgo.com/trackerblocking/appTB/1.0/blocklist.json",
