@@ -32,7 +32,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut block_list_file = File::create("./block_list.txt")?;
     for (hostname, tracker) in block_list.trackers {
         writeln!(block_list_file, "# {}", tracker.owner.display_name)?;
-        writeln!(block_list_file, "0.0.0.0 *.{}", hostname)?;
+        writeln!(block_list_file, "0.0.0.0 {}", hostname)?;
         println!("added {} to blocklist", tracker.owner.name);
     }
     Ok(())
